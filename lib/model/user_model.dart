@@ -11,11 +11,11 @@ class UserModel with _$UserModel {
   const factory UserModel({
     required String name,
     required String id,
-   required String birthday,
+    required String birthday,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);
 
-  User toEntity() => User.fromJson(toJson());
+  User toEntity() => User(name: name, id: id, birthday: birthday);
 }
